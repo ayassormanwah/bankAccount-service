@@ -17,12 +17,9 @@ public class AccountMapper {
         return bankAccountResponseDTO;
     }
 
-    public BankAccount formBankAccounRequestDTO(BankAccountRequestDTO bankAccountRequestDTO){
+    public BankAccount fromBankAccounRequestDTO(BankAccountRequestDTO bankAccountRequestDTO){
         BankAccount bankAccount = new BankAccount();
-
         BeanUtils.copyProperties(bankAccountRequestDTO, bankAccount);
-        bankAccount.setId(UUID.randomUUID().toString());
-        bankAccount.setCreatedAt(new Date());
         return bankAccount;
     }
 }
